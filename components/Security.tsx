@@ -145,7 +145,7 @@ export default function Security() {
           <div className="grid grid-cols-2 gap-3 md:gap-4 order-1 lg:order-2">
             <div className="relative h-40 sm:h-48 rounded-lg overflow-hidden shadow-lg border border-amber-500/20">
               <Image
-                src="/images/couloir1.JPG"
+                src="/images/couloir1.jpg"
                 alt="Couloir sécurisé avec rampes"
                 fill
                 className="object-cover"
@@ -154,7 +154,7 @@ export default function Security() {
             </div>
             <div className="relative h-48 rounded-lg overflow-hidden shadow-lg border border-amber-500/20">
               <Image
-                src="/images/salle-de-bain2.JPG"
+                src="/images/salle-de-bain2.jpg"
                 alt="Salle de bain accessible"
                 fill
                 className="object-cover"
@@ -163,7 +163,7 @@ export default function Security() {
             </div>
             <div className="relative h-48 rounded-lg overflow-hidden shadow-lg border border-amber-500/20">
               <Image
-                src="/images/salle-a-manger.JPG"
+                src="/images/salle-a-manger.jpg"
                 alt="Salle à manger moderne."
                 fill
                 className="object-cover"
@@ -172,7 +172,7 @@ export default function Security() {
             </div>
             <div className="relative h-40 sm:h-48 rounded-lg overflow-hidden shadow-lg border border-amber-500/20">
               <Image
-                src="/images/couloir2.JPG"
+                src="/images/couloir2.jpg"
                 alt="Couloir bien éclairé"
                 fill
                 className="object-cover"

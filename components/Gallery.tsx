@@ -15,37 +15,37 @@ export default function Gallery() {
 
   const images = [
     {
-      src: "/images/salon.JPG",
+      src: "/images/salon.jpg",
       alt: "Salon commun spacieux et confortable",
       category: "Espaces communs",
     },
     {
-      src: "/images/salle-a-manger.JPG",
+      src: "/images/salle-a-manger.jpg",
       alt: "Salle à manger accueillante",
       category: "Espaces communs",
     },
     {
-      src: "/images/cuisine.JPG",
+      src: "/images/cuisine.jpg",
       alt: "Cuisine moderne et bien équipée",
       category: "Installations",
     },
     {
-      src: "/images/chambre1-int1.JPG",
+      src: "/images/chambre1-int1.jpg",
       alt: "Chambre privée lumineuse",
       category: "Chambres",
     },
     {
-      src: "/images/chambre1-int2.JPG",
+      src: "/images/chambre1-int2.jpg",
       alt: "Chambre privée spacieuse",
       category: "Chambres",
     },
     {
-      src: "/images/salle-de-bain2.JPG",
+      src: "/images/salle-de-bain2.jpg",
       alt: "Salle de bain adaptée avec équipements de sécurité",
       category: "Salles de bain",
     },
     {
-      src: "/images/buanderie.JPG",
+      src: "/images/buanderie.jpg",
       alt: "Buanderie moderne",
       category: "Installations",
     },
