@@ -1,0 +1,11 @@
+# Robots.txt for Résidence Le Soleil
+# https://residencelesoleil.ca
+
+User-agent: *
+Allow: /
+
+# Disallow admin/API routes
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://residencelesoleil.ca/sitemap.xml
