@@ -3,7 +3,15 @@ import { Resend } from "resend";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization to avoid build-time errors when env vars aren't set
+let resend: Resend | null = null;
+const getResendClient = () => {
+  if (!resend && process.env.RESEND_API_KEY) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+};
+
 const receptionEmail = "residencelesoleil365@gmail.com";
 
 // Production domain - ensure this domain is verified in your Resend dashboard
@@ -229,8 +237,18 @@ export async function POST(req: NextRequest) {
       </html>
     `;
 
+    // Get Resend client and check if API key is configured
+    const resendClient = getResendClient();
+    if (!resendClient) {
+      console.error("Resend API key is not configured");
+      return NextResponse.json(
+        { error: "Service de messagerie non configuré. Veuillez contacter directement au 819-744-0672." },
+        { status: 500 }
+      );
+    }
+
     // Send notification to admin
-    const adminEmail = await resend.emails.send({
+    const adminEmail = await resendClient.emails.send({
       from: fromEmail,
       to: [receptionEmail],
       subject: `Nouvelle demande de visite - ${prenom} ${nom}`,
@@ -247,7 +265,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Send confirmation to user
-    const userEmail = await resend.emails.send({
+    const userEmail = await resendClient.emails.send({
       from: fromEmail,
       to: [email],
       subject: "Confirmation de votre demande de visite - Résidence Le Soleil",
